@@ -1,5 +1,12 @@
 # choreonoid_ros2_dev_env
 
+## Clone
+
+This repository uses submodules. To clone it, use the following command:
+```bash
+git clone git@github.com:HansRobo/choreonoid_ros2_dev_env.git --recursive
+```
+
 ## Install docker compose (v2)
 
 ```bash

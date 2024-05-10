@@ -1,3 +1,0 @@
-[submodule "ros2_ws/src/choreonoid_ros"]
-	path = ros2_ws/src/choreonoid_ros
-	url = https://github.com/choreonoid/choreonoid_ros.git

@@ -1,8 +1,10 @@
 # choreonoid_ros2_dev_env
 
+> [!NOTE]
+> For NVIDIA environments, please use `nvidia` branch
+
 ## Clone(Host)
 
-This repository uses submodules. To clone it, use the following command:
 ```bash
 git clone git@github.com:HansRobo/choreonoid_ros2_dev_env.git
 ```

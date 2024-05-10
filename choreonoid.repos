@@ -1,0 +1,9 @@
+repositories:
+  choreonoid:
+    type: git
+    url: https://github.com/choreonoid/choreonoid.git
+    version: master
+  choreonoid_ros:
+    type: git
+    url: https://github.com/choreonoid/choreonoid_ros.git
+    version: master

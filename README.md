@@ -4,7 +4,13 @@
 
 This repository uses submodules. To clone it, use the following command:
 ```bash
-git clone git@github.com:HansRobo/choreonoid_ros2_dev_env.git --recursive
+git clone git@github.com:HansRobo/choreonoid_ros2_dev_env.git
+```
+
+```bash
+sudo pip install vcstool
+cd choreonoid_ros2_dev_env
+vcs import ros2_ws/src < choreonoid.repos
 ```
 
 ## Install docker compose v2(Host)

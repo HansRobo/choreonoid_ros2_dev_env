@@ -32,7 +32,7 @@ docker compose up -d
 ### Enter Container(Host)
 
 ```bash
-xhost +local:docker
+xhost +local:
 docker exec -it choreonoid_workspace bash
 ```
 

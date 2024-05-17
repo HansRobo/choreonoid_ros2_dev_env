@@ -1,5 +1,20 @@
 # choreonoid_ros2_dev_env
 
+## Prerequisites
+
+- Docker
+
+> [!NOTE]
+> Docker installed from snap may not be compatible with GPU.
+> We recommend using docker from apt.
+
+- nvidia-driver
+
+> [!NOTE]
+> The nvidia-driver recommended by the ‘ubuntu-drivers devices‘ command is a good choice.
+
+reference: https://ssr-yuki.hatenablog.com/entry/2024/05/18/073337
+
 ## Clone(Host)
 
 This repository uses submodules. To clone it, use the following command:

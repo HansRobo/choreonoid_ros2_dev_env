@@ -1,7 +1,28 @@
 services:
-  choreonoid_workspace:
-    build: docker
-    container_name: choreonoid_workspace
+  choreonoid_humble:
+    build:
+      dockerfile: docker/Dockerfile.humble
+    container_name: choreonoid_humble
+    volumes:
+      # ros2 workspace
+      - ./ros2_ws:/root/ros2_ws
+      # to tansport X11 application (require xhost local:)
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - $HOME/.Xauthority:/root/.Xauthority:ro"
+    tty: true
+    stdin_open: true
+    environment:
+      # to transport X11 application window
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    # network_mode: host
+    privileged: true
+    command: bash
+
+  choreonoid_humble_gpu:
+    build:
+      dockerfile: docker/Dockerfile.humble_gpu
+    container_name: choreonoid_humble_gpu
     deploy:
       resources:
         reservations:

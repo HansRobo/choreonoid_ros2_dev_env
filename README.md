@@ -44,6 +44,15 @@ xhost +local:
 docker exec -it choreonoid_workspace bash
 ```
 
+### Install dependencies via rosdep (Container)
+
+```bash
+apt-get update
+apt-get install python3-rosdep
+rosdep init
+rosdep install -i -y --from-path ~/ros2_ws/src
+```
+
 ### Build(Container)
 
 ```bash

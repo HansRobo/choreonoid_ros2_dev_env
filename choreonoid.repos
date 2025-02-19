@@ -7,3 +7,7 @@ repositories:
     type: git
     url: https://github.com/choreonoid/choreonoid_ros.git
     version: master
+  choreonoid_ros2_mobile_robot_tutorial:
+    type: git
+    url: https://github.com/choreonoid/choreonoid_ros2_mobile_robot_tutorial
+    version: main

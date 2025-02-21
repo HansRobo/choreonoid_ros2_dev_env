@@ -1,0 +1,34 @@
+FROM nvidia/opengl:base-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y curl gnupg lsb-release
+
+RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add - \
+    && echo "deb http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list
+
+RUN apt-get update
+RUN apt-get install -y ros-humble-desktop
+RUN apt-get install -y ros-humble-ros2-control
+RUN apt-get install -y ros-humble-image-transport
+RUN apt-get install -y ros-humble-rqt*
+RUN apt-get install -y ros-humble-rviz2
+RUN apt-get install -y python3-colcon-common-extensions
+
+RUN curl https://raw.githubusercontent.com/choreonoid/choreonoid/master/misc/script/install-requisites-ubuntu-22.04.sh -o install-requisites-ubuntu-22.04.sh
+
+RUN sed -i '/sudo/d' install-requisites-ubuntu-22.04.sh
+
+RUN sh ./install-requisites-ubuntu-22.04.sh
+
+RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
+
+RUN touch /root/.bash_history
+
+RUN echo "source install/setup.bash" >> /root/.bash_history
+
+RUN echo "colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release" >> /root/.bash_history
+
+RUN echo "ros2 launch choreonoid_ros choreonoid.launch.xml" >> /root/.bash_history
+
+WORKDIR /root/ros2_ws
